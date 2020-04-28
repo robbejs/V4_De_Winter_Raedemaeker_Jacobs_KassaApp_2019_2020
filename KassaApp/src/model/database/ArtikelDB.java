@@ -1,6 +1,5 @@
 package model.database;
 import model.Artikel;
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
