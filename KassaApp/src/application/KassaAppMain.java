@@ -4,7 +4,6 @@ import javafx.stage.Stage;
 import model.database.ArtikelDB;
 import view.KassaView;
 import view.KlantView;
-
 import java.io.File;
 
 public class KassaAppMain extends Application {
