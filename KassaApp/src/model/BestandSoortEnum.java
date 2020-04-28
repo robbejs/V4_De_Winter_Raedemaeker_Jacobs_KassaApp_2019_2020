@@ -1,5 +1,7 @@
 package model;
-
+/**
+ * @Author Robbe Jacobs
+ */
 public enum BestandSoortEnum {
     EXCEL("EXCEL","model.ExcelLoadSaveStrategy"),
     TEKSTBESTAND("TEKSTBESTAND","model.TextFileLoadSaveStrategy");

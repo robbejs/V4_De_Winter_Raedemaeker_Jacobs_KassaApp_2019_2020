@@ -1,15 +1,12 @@
 package application;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import jxl.read.biff.BiffException;
-import model.BestandSoortEnum;
 import model.BestandSoortFactory;
 import model.LoadSaveInterface;
 import model.database.ArtikelDB;
 import view.KassaView;
 import view.KlantView;
 import java.io.File;
-import java.io.IOException;
 
 public class KassaAppMain extends Application {
 	ArtikelDB  artikelDB = new ArtikelDB();
@@ -18,7 +15,7 @@ public class KassaAppMain extends Application {
  private LoadSaveInterface loadSaveInterface = BestandSoortFactory.createSoort("EXCEL");
 
 	@Override
-	public void start(Stage primaryStage) throws IOException, BiffException {
+	public void start(Stage primaryStage){
 		loadSaveInterface.Load(file, artikelDB);
 		KassaView kassaView = new KassaView(artikelDB);
 		KlantView klantView = new KlantView();
@@ -29,8 +26,8 @@ public class KassaAppMain extends Application {
 		launch(args);
 	}
 
-	/*@Override
-	public void stop(){
+	@Override
+	public void stop() {
 		loadSaveInterface.Save(file,artikelDB);
-	}*/
+	}
 }

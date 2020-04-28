@@ -1,12 +1,11 @@
 package model.database;
 import model.Artikel;
-import java.io.File;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Scanner;
-
+/**
+ * @Author Joren Raedemaeker,Jonas De Winter, Robbe Jacobs
+ */
 public class ArtikelDB {
     private ArrayList<Artikel> artikels;
 

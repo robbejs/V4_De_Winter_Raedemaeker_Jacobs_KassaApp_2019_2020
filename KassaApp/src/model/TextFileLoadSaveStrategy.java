@@ -1,12 +1,11 @@
 package model;
-
 import model.database.ArtikelDB;
-
 import java.io.File;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * @Author Joren Raedemaeker
+ */
 public class TextFileLoadSaveStrategy implements LoadSaveInterface {
     @Override
     public void Load(File file, ArtikelDB artikelDB){

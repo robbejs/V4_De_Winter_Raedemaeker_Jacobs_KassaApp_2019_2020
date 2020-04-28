@@ -1,5 +1,7 @@
 package model;
-
+/**
+ * @Author Joren Raedemaeker,Jonas De Winter, Robbe Jacobs
+ */
 public class Artikel {
     private String id;
     private String naam, groep, voorraad;
