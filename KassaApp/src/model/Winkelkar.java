@@ -11,7 +11,6 @@ public class Winkelkar implements Observable{
     public Winkelkar(){
         this.winkelwagen = new ArrayList<>();
         this.observers = new ArrayList<>();
-        createObserver(new KassaController());
     }
 
     public void addArtikel(Artikel artikel){
@@ -31,6 +30,7 @@ public class Winkelkar implements Observable{
     @Override
     public void notifyObserver() {
         for (Observer o: observers){
+            
             o.update(winkelwagen);
         }
     }

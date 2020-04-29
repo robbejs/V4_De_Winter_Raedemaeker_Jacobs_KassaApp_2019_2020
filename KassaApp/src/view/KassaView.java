@@ -1,10 +1,13 @@
 package view;
+import controller.KassaController;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.LoadSaveProperties;
+import model.Winkelkar;
 import model.database.ArtikelDB;
+import view.panels.KassaOverviewPane;
 
 public class KassaView {
 	private Stage stage = new Stage();		
@@ -16,6 +19,9 @@ public class KassaView {
 		stage.setY(20);
 		Group root = new Group();
 		Scene scene = new Scene(root, 750, 500);
+
+
+
 		BorderPane borderPane = new KassaMainPane(artikelDB);
 		borderPane.prefHeightProperty().bind(scene.heightProperty());
 		borderPane.prefWidthProperty().bind(scene.widthProperty());
