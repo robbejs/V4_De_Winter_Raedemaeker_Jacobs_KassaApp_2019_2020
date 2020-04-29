@@ -7,8 +7,10 @@ import java.util.Scanner;
  * @Author Joren Raedemaeker
  */
 public class TextFileLoadSaveStrategy implements LoadSaveInterface {
+    private File file;
+
     @Override
-    public void Load(File file, ArtikelDB artikelDB){
+    public void Load(ArtikelDB artikelDB){
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
@@ -29,7 +31,7 @@ public class TextFileLoadSaveStrategy implements LoadSaveInterface {
     }
 
     @Override
-    public void Save(File file, ArtikelDB artikelDB){
+    public void Save(ArtikelDB artikelDB){
         try{
             PrintWriter writer = new PrintWriter(file);
             for (Artikel a:artikelDB.getArtikels()){
@@ -41,4 +43,8 @@ public class TextFileLoadSaveStrategy implements LoadSaveInterface {
         }
     }
 
+    @Override
+    public void setFile(String file) {
+        this.file = new File(file);
+    }
 }

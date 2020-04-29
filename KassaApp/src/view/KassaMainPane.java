@@ -2,6 +2,7 @@ package view;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import model.Winkelkar;
 import model.database.ArtikelDB;
 import view.panels.InstellingOverviewPane;
 import view.panels.KassaOverviewPane;
@@ -9,6 +10,8 @@ import view.panels.LogOverviewPane;
 import view.panels.ProductOverviewPane;
 
 public class KassaMainPane extends BorderPane {
+
+    private Winkelkar winkelkar;
 
 	public KassaMainPane(ArtikelDB artikelDB){
 	    TabPane tabPane = new TabPane();
