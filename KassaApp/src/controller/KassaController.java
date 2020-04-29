@@ -23,7 +23,7 @@ public class KassaController implements Observer {
 
     @Override
     public void update(ArrayList<Artikel> artikels) {
-        System.out.println(artikels.get(0));
-        view.setArraylist(artikels);
+        System.out.println(artikels.get(0).getNaam());
+        view.setlijst(artikels);
     }
 }

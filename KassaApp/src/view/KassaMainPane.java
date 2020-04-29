@@ -17,8 +17,10 @@ public class KassaMainPane extends BorderPane {
 	public KassaMainPane(ArtikelDB artikelDB){
         winkelkar = new Winkelkar();
         KassaController kassa  = new KassaController(winkelkar);
+
 	    TabPane tabPane = new TabPane();
         KassaOverviewPane kassaOverviewPane = new KassaOverviewPane(artikelDB, winkelkar);
+        kassa.setView(kassaOverviewPane);
         Tab kassaTab = new Tab("Kassa", kassaOverviewPane);
         ProductOverviewPane productOverviewPane = new ProductOverviewPane(artikelDB);
         Tab artikelTab = new Tab("Artikelen",productOverviewPane);

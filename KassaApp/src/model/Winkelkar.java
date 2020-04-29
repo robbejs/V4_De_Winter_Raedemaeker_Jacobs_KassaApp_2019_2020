@@ -8,6 +8,14 @@ public class Winkelkar implements Observable{
     private ArrayList<Artikel> winkelwagen;
     private ArrayList<Observer> observers;
 
+    @Override
+    public String toString() {
+        return "Winkelkar{" +
+                "winkelwagen=" + winkelwagen +
+                ", observers=" + observers +
+                '}';
+    }
+
     public Winkelkar(){
         this.winkelwagen = new ArrayList<>();
         this.observers = new ArrayList<>();
@@ -30,7 +38,6 @@ public class Winkelkar implements Observable{
     @Override
     public void notifyObserver() {
         for (Observer o: observers){
-            
             o.update(winkelwagen);
         }
     }

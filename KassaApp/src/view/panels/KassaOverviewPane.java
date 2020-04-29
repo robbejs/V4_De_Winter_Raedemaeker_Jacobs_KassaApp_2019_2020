@@ -3,8 +3,11 @@ package view.panels;
 import controller.KassaController;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import model.Artikel;
@@ -39,11 +42,22 @@ public class KassaOverviewPane extends GridPane {
 
         table.setEditable(true);
 
-        this.getChildren().addAll(txtInputId);
+
+        TableColumn<Artikel, String> colNaam = new TableColumn<Artikel, String>("naam");
+        colNaam.setMinWidth(170);
+        colNaam.setCellValueFactory(new PropertyValueFactory<Artikel, String>("naam"));
+
+        TableColumn<Artikel, String> colPrijs = new TableColumn<Artikel, String>("prijs");
+        colPrijs.setMinWidth(170);
+        colPrijs.setCellValueFactory(new PropertyValueFactory<Artikel, String >("prijs"));
+
+        table.getColumns().setAll(colNaam,  colPrijs);
+        this.add(new Label("Products:"), 0, 0, 1, 1);
+
+        this.getChildren().addAll(table,txtInputId);
     }
 
-    public void setArraylist(ArrayList<Artikel> artikels){
-        System.out.println(artikels);
+    public void setlijst(ArrayList<Artikel> artikels){
         table.setItems(FXCollections.observableArrayList(artikels ));
     }
 
