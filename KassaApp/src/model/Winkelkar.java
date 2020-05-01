@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Winkelkar implements Observable{
     private ArrayList<Artikel> winkelwagen;
     private ArrayList<Observer> observers;
+    private double totaalPrijs;
 
     @Override
     public String toString() {
@@ -23,6 +24,7 @@ public class Winkelkar implements Observable{
 
     public void addArtikel(Artikel artikel){
         this.winkelwagen.add(artikel);
+        this.totaalPrijs += artikel.getPrijs();
     }
 
     @Override
@@ -40,5 +42,10 @@ public class Winkelkar implements Observable{
         for (Observer o: observers){
             o.update(winkelwagen);
         }
+    }
+
+    public double getTotaalPrijs() {
+        totaalPrijs = (double) Math.round(totaalPrijs * 100) / 100;
+        return totaalPrijs;
     }
 }
