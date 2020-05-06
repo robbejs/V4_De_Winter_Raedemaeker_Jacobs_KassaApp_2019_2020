@@ -1,8 +1,8 @@
 package view;
-import controller.KassaController;
-import javafx.scene.Node;
+import controller.KassaOverviewController;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import model.Winkel;
 import model.Winkelkar;
 import model.database.ArtikelDB;
 import view.panels.InstellingOverviewPane;
@@ -12,17 +12,13 @@ import view.panels.ProductOverviewPane;
 
 public class KassaMainPane extends BorderPane {
 
-    private Winkelkar winkelkar;
-
-	public KassaMainPane(ArtikelDB artikelDB){
-        winkelkar = new Winkelkar();
-        KassaController kassa  = new KassaController(winkelkar);
-
+	public KassaMainPane(Winkel winkel){
+        KassaOverviewController kassa  = new KassaOverviewController(winkel.getWinkelkar());
 	    TabPane tabPane = new TabPane();
-        KassaOverviewPane kassaOverviewPane = new KassaOverviewPane(artikelDB, winkelkar);
+        KassaOverviewPane kassaOverviewPane = new KassaOverviewPane(winkel);
         kassa.setView(kassaOverviewPane);
         Tab kassaTab = new Tab("Kassa", kassaOverviewPane);
-        ProductOverviewPane productOverviewPane = new ProductOverviewPane(artikelDB);
+        ProductOverviewPane productOverviewPane = new ProductOverviewPane(winkel.getArtikelDB());
         Tab artikelTab = new Tab("Artikelen",productOverviewPane);
         InstellingOverviewPane instellingOverviewPane = new InstellingOverviewPane();
         Tab instellingTab = new Tab("Instellingen", instellingOverviewPane);

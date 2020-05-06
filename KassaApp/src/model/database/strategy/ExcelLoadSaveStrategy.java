@@ -1,19 +1,18 @@
-package model;
+package model.database.strategy;
 import excel.ExcelPlugin;
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
+import model.Artikel;
+import model.database.LoadSaveInterface;
 import model.database.ArtikelDB;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Properties;
 
 /**
  * @Author Jonas De Winter
  **/
-public class ExcelLoadSaveStrategy implements LoadSaveInterface{
+public class ExcelLoadSaveStrategy implements LoadSaveInterface {
     private ExcelPlugin excelPlugin;
     private File file;
 

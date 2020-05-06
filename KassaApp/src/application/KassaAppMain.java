@@ -1,27 +1,24 @@
 package application;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import model.BestandSoortFactory;
-import model.LoadSaveInterface;
-import model.LoadSaveProperties;
+import model.Winkel;
+import model.Winkelkar;
+import model.database.factory.BestandSoortFactory;
+import model.database.LoadSaveInterface;
+import model.database.LoadSaveProperties;
 import model.database.ArtikelDB;
 import view.KassaView;
 import view.KlantView;
-import java.io.File;
 
 public class KassaAppMain extends Application {
-	ArtikelDB  artikelDB = new ArtikelDB();
-
-	private LoadSaveProperties properties = new LoadSaveProperties();
-
- 	private LoadSaveInterface loadSaveInterface = BestandSoortFactory.createSoort(properties.Load());
+	private Winkel winkel;
 
 	@Override
 	public void start(Stage primaryStage){
-		loadSaveInterface.Load(artikelDB);
-		KassaView kassaView = new KassaView(artikelDB);
-		KlantView klantView = new KlantView();
-		System.out.println(artikelDB.getArtikelsString());
+		this.winkel = new Winkel();
+		KassaView kassaView = new KassaView(winkel);
+		KlantView klantView = new KlantView(winkel);
+		System.out.println(winkel.getArtikelDB().getArtikelsString());
 	}
 	
 	public static void main(String[] args) {
@@ -30,6 +27,6 @@ public class KassaAppMain extends Application {
 
 	@Override
 	public void stop() {
-		loadSaveInterface.Save(artikelDB);
+		winkel.stop();
 	}
 }

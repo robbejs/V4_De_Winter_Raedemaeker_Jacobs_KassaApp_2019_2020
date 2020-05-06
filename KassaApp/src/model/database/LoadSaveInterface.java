@@ -1,4 +1,4 @@
-package model;
+package model.database;
 import model.database.ArtikelDB;
 import java.io.File;
 /**

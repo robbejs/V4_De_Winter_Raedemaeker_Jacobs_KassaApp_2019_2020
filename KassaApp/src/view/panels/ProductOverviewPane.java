@@ -1,22 +1,17 @@
 package view.panels;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import model.Artikel;
 import model.database.ArtikelDB;
 
 
 public class ProductOverviewPane extends GridPane {
-	//private TableView<Product> table;
+
 	private TableView<Artikel> table = new TableView<Artikel>();
 
 	public ProductOverviewPane(ArtikelDB artikelDB) {

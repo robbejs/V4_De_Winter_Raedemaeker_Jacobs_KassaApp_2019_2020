@@ -1,4 +1,4 @@
-package model;
+package model.observer;
 
 public interface Observable {
     void createObserver(Observer observer);

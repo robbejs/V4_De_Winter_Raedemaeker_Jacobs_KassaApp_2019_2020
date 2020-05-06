@@ -1,5 +1,4 @@
-package model;
-
+package model.database;
 import java.io.*;
 import java.util.Properties;
 

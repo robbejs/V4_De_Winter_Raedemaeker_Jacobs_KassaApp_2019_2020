@@ -1,4 +1,6 @@
-package model;
+package model.database.strategy;
+import model.Artikel;
+import model.database.LoadSaveInterface;
 import model.database.ArtikelDB;
 import java.io.File;
 import java.io.PrintWriter;

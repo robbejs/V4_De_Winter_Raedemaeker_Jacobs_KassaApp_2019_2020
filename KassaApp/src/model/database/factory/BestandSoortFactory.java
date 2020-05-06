@@ -1,10 +1,6 @@
-package model;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+package model.database.factory;
+import model.database.BestandSoortEnum;
+import model.database.LoadSaveInterface;
 
 public class BestandSoortFactory {
 

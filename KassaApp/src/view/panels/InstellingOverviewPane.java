@@ -1,13 +1,10 @@
 package view.panels;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import model.LoadSaveProperties;
-
-import javax.swing.*;
+import model.database.LoadSaveProperties;
 
 public class InstellingOverviewPane extends GridPane {
     private LoadSaveProperties properties = new LoadSaveProperties();
