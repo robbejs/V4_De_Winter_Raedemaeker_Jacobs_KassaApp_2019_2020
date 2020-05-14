@@ -1,14 +1,9 @@
 package controller;
-
-import javafx.scene.control.TableView;
 import model.Artikel;
 import model.Winkelkar;
-import model.observer.Observable;
 import model.observer.Observer;
 import view.panels.KlantMainPane;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -16,10 +11,12 @@ public class KlantViewController implements Observer {
 
     private Map<Artikel,Integer> artikelMap;
     private KlantMainPane view;
+    private Winkelkar winkelkar;
 
     public KlantViewController(Winkelkar winkelkar){
         artikelMap = new LinkedHashMap<>();
         winkelkar.createObserver(this);
+        this.winkelkar = winkelkar;
     }
 
     @Override
@@ -36,10 +33,13 @@ public class KlantViewController implements Observer {
             }
         }
         view.setTable(artikelMap);
-        view.lblBedrag.setText(Double.toString(prijs));
+        view.setLblTootaalPrijs((Double.toString(prijs)));
+        view.setLblKorting((Double.toString(winkelkar.getKortingInterface().berekenKorting(artikels))));
+        view.setLblBetaalPrijs((Double.toString(prijs - winkelkar.getKortingInterface().berekenKorting(artikels))));
     }
 
     public void setView(KlantMainPane view) {
         this.view = view;
     }
+
 }

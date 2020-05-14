@@ -4,14 +4,21 @@ import java.util.Properties;
 
 public class LoadSaveProperties {
 
-    public String Load(){
+    private boolean xls = false;
+    private boolean txt = false;
+
+    public String Load(Properties properties){
         String dbType = "";
-        Properties properties = new Properties();
         InputStream is = null;
         try {
             is = new FileInputStream("src/bestanden/config.properties");
             properties.load(is);
             dbType = (String)properties.getProperty("DATABASE");
+            if(dbType.equalsIgnoreCase("xls")){
+                xls = true;
+            }else{
+                txt = true;
+            }
             is.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -20,8 +27,7 @@ public class LoadSaveProperties {
         return dbType;
     }
 
-    public void Save(String bestand){
-        Properties properties = new Properties();
+    public void Save(String bestand, Properties properties){
         OutputStream os = null;
         try {
             os = new FileOutputStream("src/bestanden/config.properties");
@@ -31,6 +37,13 @@ public class LoadSaveProperties {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    public boolean isXls() {
+        return xls;
+    }
+
+    public boolean isTxt() {
+        return txt;
     }
 }

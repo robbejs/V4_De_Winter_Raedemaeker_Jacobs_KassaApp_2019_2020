@@ -1,6 +1,6 @@
 package model.database.factory;
 import model.database.BestandSoortEnum;
-import model.database.LoadSaveInterface;
+import model.database.strategy.LoadSaveInterface;
 
 public class BestandSoortFactory {
 

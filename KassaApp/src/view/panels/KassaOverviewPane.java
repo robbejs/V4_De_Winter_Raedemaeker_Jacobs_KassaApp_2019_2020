@@ -9,22 +9,30 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Artikel;
 import model.Winkel;
-
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class KassaOverviewPane extends GridPane {
 
     private TableView<Artikel> table = new TableView<Artikel>();
-    public Label lblTotaalPrijs;
+    private Label lblTotaalPrijs;
+    private Label lblKorting;
+    private Label lblbetaalPrijs;
     private Button btnOffHold;
     private Button btnOnHold;
     private Button btnVerkoop;
+    private Button btnBetaal;
+    private Button btnAnnuleer;
+    private Button btnOpen;
     private Winkel winkel;
+
+
 
     public KassaOverviewPane(Winkel winkel){
         this.winkel = winkel;
         lblTotaalPrijs = new Label("TotaalPrijs");
+        lblKorting = new Label("Korting");
+        lblbetaalPrijs = new Label("Betaal prijs");
         Label lblFout = new Label("");
         TextField txtInputId = new TextField();
         txtInputId.setOnKeyReleased(event -> {
@@ -80,19 +88,46 @@ public class KassaOverviewPane extends GridPane {
             winkel.setOnHold();
         });
         btnOffHold = new Button("Haal vorig winkelwagentje terug");
+        btnOffHold.setVisible(false);
         btnOffHold.setOnAction(event -> {
             winkel.setOffHold();
         });
 
-        btnOffHold.setVisible(winkel.isOnHold());
+        HBox h2 = new HBox(8);
+        h2.setVisible(false);
 
         btnVerkoop = new Button("Reken winkelwagen af");
         btnVerkoop.setOnAction(event -> {
             winkel.verkoop();
+            h2.setVisible(true);
+            btnVerkoop.setVisible(false);
         });
 
+        btnBetaal = new Button("Betaal de rekening");
+        btnBetaal.setOnAction(event -> {
+            winkel.betaal();
+            h2.setVisible(false);
+            btnVerkoop.setVisible(true);
+        });
+
+        btnAnnuleer = new Button("Annuleer");
+        btnAnnuleer.setOnAction(event -> {
+            winkel.annuleer();
+            h2.setVisible(false);
+            btnVerkoop.setVisible(true);
+        });
+
+        btnOpen = new Button("Open winkelkar");
+        btnOpen.setOnAction(event -> {
+            winkel.open();
+            h2.setVisible(false);
+            btnVerkoop.setVisible(true);
+        });
+
+        h2.getChildren().addAll(btnBetaal, btnAnnuleer, btnOpen);
+
         VBox v1 = new VBox();
-        v1.getChildren().addAll(txtInputId, lblTotaalPrijs, lblFout, btnOnHold, btnOffHold, btnVerkoop);
+        v1.getChildren().addAll(txtInputId, lblTotaalPrijs, lblKorting, lblbetaalPrijs, lblFout, btnOnHold, btnOffHold, btnVerkoop, h2);
 
         HBox h1 = new HBox(10);
         h1.getChildren().addAll(table, v1);
@@ -107,12 +142,21 @@ public class KassaOverviewPane extends GridPane {
         table.setItems(FXCollections.observableArrayList(artikels ));
     }
 
-    public void setLblTotaalPrijs(String tekst){
-        lblTotaalPrijs.setText(tekst);
+
+    public void setLblTotaalPrijs(String lblTotaalPrijs) {
+        this.lblTotaalPrijs.setText(lblTotaalPrijs);
+    }
+
+    public void setLblKorting(String lblKorting) {
+        this.lblKorting.setText(lblKorting);
+    }
+
+    public void setLblbetaalPrijs(String lblbetaalPrijs) {
+        this.lblbetaalPrijs.setText(lblbetaalPrijs);
     }
 
     public void setButtons(){
-        btnOffHold.setVisible(winkel.isOnHold());
-        btnOnHold.setVisible(!winkel.isOnHold());
+        btnOffHold.setVisible(winkel.getWinkelkarOnHold().getCurrentState() == winkel.getWinkelkarOnHold().getOnHold());
+        btnOnHold.setVisible(!(winkel.getWinkelkarOnHold().getCurrentState() == winkel.getWinkelkarOnHold().getOnHold()));
     }
 }

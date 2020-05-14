@@ -2,11 +2,6 @@ package application;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.Winkel;
-import model.Winkelkar;
-import model.database.factory.BestandSoortFactory;
-import model.database.LoadSaveInterface;
-import model.database.LoadSaveProperties;
-import model.database.ArtikelDB;
 import view.KassaView;
 import view.KlantView;
 
@@ -25,8 +20,4 @@ public class KassaAppMain extends Application {
 		launch(args);
 	}
 
-	@Override
-	public void stop() {
-		winkel.stop();
-	}
 }

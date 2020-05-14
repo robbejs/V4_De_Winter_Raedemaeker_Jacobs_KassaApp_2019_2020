@@ -2,10 +2,8 @@ package view;
 import controller.KlantViewController;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Winkel;
-import model.Winkelkar;
 import view.panels.KlantMainPane;
 
 public class KlantView {

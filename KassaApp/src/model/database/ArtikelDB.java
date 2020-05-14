@@ -26,6 +26,15 @@ public class ArtikelDB {
         return artikels;
     }
 
+    public Artikel getArtikel(Artikel a){
+        for (Artikel b: artikels){
+            if (b.equals(a)){
+                return b;
+            }
+        }
+        return null;
+    }
+
     public String getArtikelsString(){
         String result = "";
         for (Artikel a: artikels){

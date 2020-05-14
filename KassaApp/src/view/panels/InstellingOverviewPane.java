@@ -1,33 +1,25 @@
 package view.panels;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
+import model.KortingProperties;
+import model.Winkel;
 import model.database.LoadSaveProperties;
+import view.panels.instellingen.BestandPane;
+import view.panels.instellingen.KortingPane;
 
-public class InstellingOverviewPane extends GridPane {
+public class InstellingOverviewPane extends BorderPane {
     private LoadSaveProperties properties = new LoadSaveProperties();
+    private KortingProperties kortingProperties = new KortingProperties();
 
-    public InstellingOverviewPane(){
+    public InstellingOverviewPane(Winkel winkel){
+        TabPane tabPane = new TabPane();
+        BestandPane db = new BestandPane(winkel);
+        Tab dbT = new Tab("Database", db);
+        KortingPane kortingPane = new KortingPane(winkel);
+        Tab kortingT = new Tab("Kortingen", kortingPane);
+        tabPane.getTabs().add(dbT);
+        tabPane.getTabs().add(kortingT);
 
-        ToggleGroup tg = new ToggleGroup();
-
-        RadioButton btnExcel = new RadioButton("xls");
-        RadioButton btnTextFile = new RadioButton("txt");
-
-        btnExcel.setToggleGroup(tg);
-        btnTextFile.setToggleGroup(tg);
-
-        Button btnSave = new Button("Save");
-        btnSave.setOnAction(event -> {
-            RadioButton rb = (RadioButton)tg.getSelectedToggle();
-            properties.Save(rb.getText());
-        });
-
-        VBox v1 = new VBox();
-
-        v1.getChildren().addAll(btnExcel,btnTextFile, btnSave);
-        this.getChildren().addAll(v1);
+        this.setCenter(tabPane);
     }
 }

@@ -1,6 +1,5 @@
-package model.database;
+package model.database.strategy;
 import model.database.ArtikelDB;
-import java.io.File;
 /**
  * @Author Joren Raedemaeker,Jonas De Winter, Robbe Jacobs
  */

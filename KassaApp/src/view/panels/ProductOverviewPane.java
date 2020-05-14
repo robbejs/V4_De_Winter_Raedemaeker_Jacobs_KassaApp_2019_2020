@@ -1,5 +1,6 @@
 package view.panels;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -8,13 +9,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import model.Artikel;
 import model.database.ArtikelDB;
+import java.util.ArrayList;
 
 
 public class ProductOverviewPane extends GridPane {
 
-	private TableView<Artikel> table = new TableView<Artikel>();
+	private TableView<Artikel> table;
 
 	public ProductOverviewPane(ArtikelDB artikelDB) {
+
+		table = new TableView<Artikel>();
+
 		this.setPadding(new Insets(5, 5, 5, 5));
         this.setVgap(5);
         this.setHgap(5);
@@ -47,6 +52,8 @@ public class ProductOverviewPane extends GridPane {
 		this.getChildren().addAll(table);
 	}
 
-
+	public void setlijst(ArrayList<Artikel> artikels){
+		table.getItems().setAll(artikels);
+	}
 
 }

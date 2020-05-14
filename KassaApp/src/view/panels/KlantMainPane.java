@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import model.Artikel;
 import java.util.Map;
@@ -14,7 +15,9 @@ import java.util.Map;
 public class KlantMainPane extends GridPane {
 
     private TableView<Map.Entry<Artikel, Integer>> table;
-    public Label lblBedrag;
+    private Label lblTootaalPrijs;
+    private Label lblKorting;
+    private Label lblBetaalPrijs;
 
     public KlantMainPane(){
 
@@ -40,17 +43,36 @@ public class KlantMainPane extends GridPane {
             }
         });
 
-        lblBedrag = new Label("Totaal te betalen");
+        lblTootaalPrijs = new Label("Totaal te betalen");
+        lblKorting = new Label("Korting");
+        lblBetaalPrijs = new Label("Te betalen bedrag");
 
         table.getColumns().add(column1);
         table.getColumns().add(column2);
 
+
         this.add(table,0,0);
-        this.add(lblBedrag,1,0);
+
+        VBox v1 = new VBox(8);
+        v1.getChildren().addAll(lblTootaalPrijs, lblKorting, lblBetaalPrijs);
+
+        this.add(v1,1,0);
     }
 
     public void setTable(Map<Artikel, Integer> table) {
         ObservableList<Map.Entry<Artikel,Integer>> test = FXCollections.observableArrayList(table.entrySet());
         this.table.setItems(test);
+    }
+
+    public void setLblTootaalPrijs(String lblTootaalPrijs) {
+        this.lblTootaalPrijs.setText(lblTootaalPrijs);
+    }
+
+    public void setLblKorting(String lblKorting) {
+        this.lblKorting.setText(lblKorting);
+    }
+
+    public void setLblBetaalPrijs(String lblBetaalPrijs) {
+        this.lblBetaalPrijs.setText(lblBetaalPrijs);
     }
 }

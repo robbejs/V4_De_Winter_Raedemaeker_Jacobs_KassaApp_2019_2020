@@ -3,7 +3,6 @@ import excel.ExcelPlugin;
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 import model.Artikel;
-import model.database.LoadSaveInterface;
 import model.database.ArtikelDB;
 import java.io.File;
 import java.io.IOException;

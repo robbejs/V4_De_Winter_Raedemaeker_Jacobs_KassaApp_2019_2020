@@ -1,6 +1,4 @@
 package controller;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import model.Artikel;
 import model.observer.Observer;
 import model.Winkelkar;
@@ -19,7 +17,6 @@ public class KassaOverviewController implements Observer {
         this.onHoldKar = new Winkelkar();
     }
 
-    // called by the view
     public void setView(KassaOverviewPane view) {
         this.view = view;
     }
@@ -32,6 +29,8 @@ public class KassaOverviewController implements Observer {
     public void update(ArrayList<Artikel> artikels) {
         view.setlijst(artikels);
         view.setLblTotaalPrijs(Double.toString(winkelkar.getTotaalPrijs()));
+        view.setLblKorting(Double.toString(winkelkar.getKortingInterface().berekenKorting(artikels)));
+        view.setLblbetaalPrijs(Double.toString(winkelkar.getTotaalPrijs() - winkelkar.getKortingInterface().berekenKorting(artikels)));
         view.setButtons();
     }
 }
