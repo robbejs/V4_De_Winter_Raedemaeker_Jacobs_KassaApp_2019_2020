@@ -44,7 +44,7 @@ public class KassaOverviewPane extends GridPane {
                         lblFout.setText("");
                         break;
                     }else{
-                        lblFout.setText("Dit artikel is niet beschikbaar");
+                        lblFout.setText("Dit artikel is niet beschikbaar of out of stock");
                     }
                 }
                 txtInputId.clear();

@@ -13,7 +13,6 @@ public class KassaAppMain extends Application {
 		this.winkel = new Winkel();
 		KassaView kassaView = new KassaView(winkel);
 		KlantView klantView = new KlantView(winkel);
-		System.out.println(winkel.getArtikelDB().getArtikelsString());
 	}
 	
 	public static void main(String[] args) {

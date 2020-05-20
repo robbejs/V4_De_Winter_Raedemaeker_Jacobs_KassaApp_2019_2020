@@ -1,4 +1,9 @@
 package model;
+import javafx.scene.control.Alert;
+import model.decorator.AlgemeneFooter;
+import model.decorator.AlgemeneHeader;
+import model.decorator.Ticket;
+import model.decorator.TicketSetter;
 import model.observer.Observable;
 import model.observer.Observer;
 import model.state.*;
@@ -16,6 +21,7 @@ public class Winkelkar implements Observable {
     private StateInterface betaald;
     private StateInterface onHold;
     private StateInterface currentState;
+
 
     @Override
     public String toString() {
@@ -92,7 +98,6 @@ public class Winkelkar implements Observable {
     public void betaald(){
         notifyObserver();
         this.currentState.betaald();
-
     }
 
     public void annuleerd(){

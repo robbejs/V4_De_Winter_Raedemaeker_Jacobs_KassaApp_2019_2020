@@ -25,7 +25,6 @@ public class ProductOverviewController implements Observer {
             for (Artikel a : artikels) {
                 int test = Integer.parseInt(winkel.getArtikelDB().getArtikel(a).getVoorraad());
                 winkel.getArtikelDB().getArtikel(a).setVoorraad(Integer.toString(test - 1));
-                System.out.println(winkel.getArtikelDB().getArtikel(a).getVoorraad());
             }
             view.setlijst(winkel.getArtikelDB().getArtikels());
             winkel.getLoadSaveInterface().Save(winkel.getArtikelDB());

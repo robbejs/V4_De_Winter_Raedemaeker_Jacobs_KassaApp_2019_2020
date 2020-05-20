@@ -6,6 +6,7 @@ import model.Winkel;
 import model.database.LoadSaveProperties;
 import view.panels.instellingen.BestandPane;
 import view.panels.instellingen.KortingPane;
+import view.panels.instellingen.TicketPane;
 
 public class InstellingOverviewPane extends BorderPane {
     private LoadSaveProperties properties = new LoadSaveProperties();
@@ -17,8 +18,11 @@ public class InstellingOverviewPane extends BorderPane {
         Tab dbT = new Tab("Database", db);
         KortingPane kortingPane = new KortingPane(winkel);
         Tab kortingT = new Tab("Kortingen", kortingPane);
+        TicketPane ticketPane = new TicketPane(winkel);
+        Tab ticketT = new Tab("Ticket", ticketPane);
         tabPane.getTabs().add(dbT);
         tabPane.getTabs().add(kortingT);
+        tabPane.getTabs().add(ticketT);
 
         this.setCenter(tabPane);
     }

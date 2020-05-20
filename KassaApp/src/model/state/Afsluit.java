@@ -17,7 +17,6 @@ public class Afsluit implements StateInterface {
     @Override
     public void betaald() {
         this.winkelkar.setCurrentState(winkelkar.getBetaald());
-        System.out.println(winkelkar.getBetaald());
     }
 
     @Override

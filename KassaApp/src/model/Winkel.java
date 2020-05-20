@@ -1,8 +1,10 @@
 package model;
+import javafx.scene.control.Alert;
 import model.database.ArtikelDB;
 import model.database.strategy.LoadSaveInterface;
 import model.database.LoadSaveProperties;
 import model.database.factory.BestandSoortFactory;
+import model.decorator.*;
 import model.factory.KortingFactory;
 import model.strategy.KortingInterface;
 
@@ -46,6 +48,38 @@ public class Winkel {
     }
 
     public void betaal(){
+        Ticket ticket = new TicketSetter(winkelkar);
+        String totaalPrijsFooter = kortingProperties.Load("TOTAALPRIJSFOOTER");
+        String footerBTW = kortingProperties.Load("FOOTERBTW");
+        String datumHeader = kortingProperties.Load("DATUMENTIJDHEADER");
+        String algemeneHeader = kortingProperties.Load("ALGEMENEHEADER");
+        String algemeneFooter = kortingProperties.Load("ALGEMENEFOOTER");
+
+        if (totaalPrijsFooter.equalsIgnoreCase("true")){
+            ticket = new TotaalPrijsFooter(ticket, winkelkar);
+        }
+
+        if (footerBTW.equalsIgnoreCase("true")){
+            ticket = new BetaalPrijsFooterBTW(ticket, winkelkar.getWinkelwagen());
+        }
+
+        if (datumHeader.equalsIgnoreCase("true")){
+            ticket = new DatumEnTijdHeader(ticket);
+        }
+
+        if (!algemeneFooter.isEmpty()){
+            ticket = new AlgemeneFooter(ticket, algemeneFooter);
+        }
+
+        if (!algemeneHeader.isEmpty()){
+            ticket = new AlgemeneHeader(ticket, algemeneHeader);
+        }
+
+        System.out.println(ticket.getTekst());
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+        a.setContentText((ticket.getTekst()));
+        a.show();
+
         if (winkelkarOnHold.getCurrentState() == winkelkarOnHold.getOnHold()){
             teller ++;
             if (teller == 3){
