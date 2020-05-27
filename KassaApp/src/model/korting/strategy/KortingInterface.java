@@ -1,4 +1,4 @@
-package model.strategy;
+package model.korting.strategy;
 import model.Artikel;
 import java.util.ArrayList;
 

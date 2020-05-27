@@ -1,7 +1,7 @@
 package view.panels;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-import model.KortingProperties;
+import model.korting.KortingProperties;
 import model.Winkel;
 import model.database.LoadSaveProperties;
 import view.panels.instellingen.BestandPane;

@@ -1,6 +1,6 @@
-package model.factory;
-import model.KortingEnum;
-import model.strategy.KortingInterface;
+package model.korting.factory;
+import model.korting.KortingEnum;
+import model.korting.strategy.KortingInterface;
 
 public class KortingFactory {
     private static KortingFactory uniqueInstance;

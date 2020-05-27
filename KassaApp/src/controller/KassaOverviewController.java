@@ -1,12 +1,8 @@
 package controller;
-import javafx.scene.control.Alert;
 import model.Artikel;
 import model.observer.Observer;
 import model.Winkelkar;
 import view.panels.KassaOverviewPane;
-
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class KassaOverviewController implements Observer {

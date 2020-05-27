@@ -1,5 +1,4 @@
 package model.decorator;
-
 import java.time.LocalDateTime;
 
 public class DatumEnTijdHeader extends TicketDecorator {

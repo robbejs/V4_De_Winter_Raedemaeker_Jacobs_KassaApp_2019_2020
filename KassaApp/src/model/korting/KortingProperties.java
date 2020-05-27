@@ -1,4 +1,4 @@
-package model;
+package model.korting;
 import java.io.*;
 import java.util.Properties;
 

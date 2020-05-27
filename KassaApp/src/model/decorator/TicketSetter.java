@@ -2,7 +2,6 @@ package model.decorator;
 
 import model.Artikel;
 import model.Winkelkar;
-
 import java.util.ArrayList;
 
 public class TicketSetter extends Ticket{

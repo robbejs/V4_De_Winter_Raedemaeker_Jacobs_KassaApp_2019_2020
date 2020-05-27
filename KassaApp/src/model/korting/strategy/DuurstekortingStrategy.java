@@ -1,23 +1,22 @@
-package model.strategy;
+package model.korting.strategy;
 import model.Artikel;
 import java.util.ArrayList;
 
-public class GroepskortingStrategy implements KortingInterface {
+public class DuurstekortingStrategy implements KortingInterface {
 
-    private double percentage = 0.05;
+    private double percentage = 0.25;
 
     @Override
     public double berekenKorting(ArrayList<Artikel> artikels) {
-
-        double totaalKorting = 0;
+        Artikel duursteArtikel = artikels.get(0);
 
         for (Artikel a: artikels){
-            if (a.getGroep().equalsIgnoreCase("gr1")){
-                totaalKorting += a.getPrijs() * percentage;
+            if (a.getPrijs() > duursteArtikel.getPrijs()){
+                duursteArtikel = a;
             }
         }
 
-        return totaalKorting;
+        return duursteArtikel.getPrijs() * percentage;
     }
 
     @Override

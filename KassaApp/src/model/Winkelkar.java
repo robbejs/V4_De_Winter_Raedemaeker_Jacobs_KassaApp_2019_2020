@@ -1,14 +1,8 @@
 package model;
-import javafx.scene.control.Alert;
-import model.decorator.AlgemeneFooter;
-import model.decorator.AlgemeneHeader;
-import model.decorator.Ticket;
-import model.decorator.TicketSetter;
 import model.observer.Observable;
 import model.observer.Observer;
 import model.state.*;
-import model.strategy.KortingInterface;
-
+import model.korting.strategy.KortingInterface;
 import java.util.ArrayList;
 
 public class Winkelkar implements Observable {

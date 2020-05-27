@@ -1,7 +1,5 @@
 package model.decorator;
-
 import model.Artikel;
-
 import java.util.ArrayList;
 
 public class BetaalPrijsFooterBTW extends TicketDecorator {

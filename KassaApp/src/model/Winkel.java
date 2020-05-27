@@ -5,9 +5,9 @@ import model.database.strategy.LoadSaveInterface;
 import model.database.LoadSaveProperties;
 import model.database.factory.BestandSoortFactory;
 import model.decorator.*;
-import model.factory.KortingFactory;
-import model.strategy.KortingInterface;
-
+import model.korting.KortingProperties;
+import model.korting.factory.KortingFactory;
+import model.korting.strategy.KortingInterface;
 import java.util.Properties;
 
 public class Winkel {

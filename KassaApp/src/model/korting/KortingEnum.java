@@ -1,9 +1,9 @@
-package model;
+package model.korting;
 
 public enum KortingEnum {
-    groepskorting("groepskorting", "model.strategy.GroepskortingStrategy"),
-    drempelkorting("drempelkorting","model.strategy.DrempelkortingStrategy"),
-    duurstekorting("duurstekorting","model.strategy.DuurstekortingStrategy");
+    groepskorting("groepskorting", "model.korting.strategy.GroepskortingStrategy"),
+    drempelkorting("drempelkorting","model.korting.strategy.DrempelkortingStrategy"),
+    duurstekorting("duurstekorting","model.korting.strategy.DuurstekortingStrategy");
 
     private final String omschrijving;
     private final String klassenaam;

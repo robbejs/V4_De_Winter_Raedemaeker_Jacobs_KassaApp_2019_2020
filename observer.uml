@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>model.observer</OriginalElement>
+  <nodes>
+    <node x="811.0" y="948.0">controller.LogOverviewController</node>
+    <node x="500.0" y="937.0">controller.ProductOverviewController</node>
+    <node x="284.0" y="113.0">model.observer.Observable</node>
+    <node x="241.0" y="937.0">controller.KassaOverviewController</node>
+    <node x="401.5" y="0.0">model.observer.Observer</node>
+    <node x="359.6439075630252" y="260.0">model.Winkelkar</node>
+    <node x="0.0" y="937.0">controller.KlantViewController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="controller.ProductOverviewController" target="model.observer.Observer">
+      <point x="97.0" y="-100.5" />
+      <point x="742.5" y="917.0" />
+      <point x="730.9749649859943" y="917.0" />
+      <point x="730.9749649859943" y="93.0" />
+      <point x="568.0714285714286" y="93.0" />
+      <point x="60.571428571428555" y="26.5" />
+    </edge>
+    <edge source="model.Winkelkar" target="model.observer.Observable">
+      <point x="-71.0" y="-298.5" />
+      <point x="395.1439075630252" y="235.0" />
+      <point x="390.5" y="235.0" />
+      <point x="0.0" y="48.5" />
+    </edge>
+    <edge source="model.Winkelkar" target="model.observer.Observer">
+      <point x="0.0" y="-298.5" />
+      <point x="466.1439075630252" y="235.0" />
+      <point x="507.5" y="235.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="controller.KlantViewController" target="model.observer.Observer">
+      <point x="-73.66666666666674" y="-100.5" />
+      <point x="36.83333333333326" y="877.0" />
+      <point x="132.62307422969184" y="877.0" />
+      <point x="132.62307422969184" y="73.0" />
+      <point x="416.6428571428571" y="73.0" />
+      <point x="-90.85714285714289" y="26.5" />
+    </edge>
+    <edge source="controller.KlantViewController" target="model.Winkelkar">
+      <point x="73.66666666666674" y="-100.5" />
+      <point x="184.16666666666674" y="897.0" />
+      <point x="395.1439075630252" y="897.0" />
+      <point x="-71.0" y="298.5" />
+    </edge>
+    <edge source="controller.LogOverviewController" target="model.observer.Observer">
+      <point x="76.33333333333331" y="-89.5" />
+      <point x="1001.8333333333333" y="877.0" />
+      <point x="866.141631652661" y="877.0" />
+      <point x="866.141631652661" y="83.0" />
+      <point x="598.3571428571429" y="83.0" />
+      <point x="90.85714285714289" y="26.5" />
+    </edge>
+    <edge source="controller.LogOverviewController" target="model.Winkelkar">
+      <point x="-76.33333333333331" y="-89.5" />
+      <point x="849.1666666666667" y="897.0" />
+      <point x="537.1439075630252" y="897.0" />
+      <point x="71.0" y="298.5" />
+    </edge>
+    <edge source="controller.KassaOverviewController" target="model.Winkelkar">
+      <point x="89.625" y="-100.5" />
+      <point x="450.125" y="917.0" />
+      <point x="466.1439075630252" y="917.0" />
+      <point x="0.0" y="298.5" />
+    </edge>
+    <edge source="controller.KassaOverviewController" target="model.observer.Observer">
+      <point x="-89.625" y="-100.5" />
+      <point x="270.875" y="877.0" />
+      <point x="273.5" y="877.0" />
+      <point x="273.5" y="83.0" />
+      <point x="446.92857142857144" y="83.0" />
+      <point x="-60.571428571428555" y="26.5" />
+    </edge>
+    <edge source="controller.ProductOverviewController" target="model.Winkelkar">
+      <point x="-97.0" y="-100.5" />
+      <point x="548.5" y="917.0" />
+      <point x="489.81057422969195" y="917.0" />
+      <point x="23.666666666666742" y="298.5" />
+    </edge>
+    <edge source="model.observer.Observable" target="model.observer.Observer">
+      <point x="0.0" y="-48.5" />
+      <point x="390.5" y="93.0" />
+      <point x="477.2142857142858" y="93.0" />
+      <point x="-30.28571428571422" y="26.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5785837651122625" x="668.6388059701492" y="569.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
