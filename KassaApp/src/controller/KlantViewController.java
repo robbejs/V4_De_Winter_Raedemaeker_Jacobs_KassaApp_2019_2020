@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class KlantViewController implements Observer {
 
     private Map<Artikel,Integer> artikelMap;

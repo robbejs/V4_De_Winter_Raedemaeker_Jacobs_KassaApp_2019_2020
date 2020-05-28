@@ -1,7 +1,9 @@
 package model.database;
+
 /**
- * @Author Robbe Jacobs
- */
+ * @Author We hebben alles samen gedaan
+ **/
+
 public enum BestandSoortEnum {
     xls("xls","model.database.strategy.ExcelLoadSaveStrategy", "src/bestanden/artikel.xls"),
     txt("txt","model.database.strategy.TextFileLoadSaveStrategy", "src/bestanden/artikel.txt");

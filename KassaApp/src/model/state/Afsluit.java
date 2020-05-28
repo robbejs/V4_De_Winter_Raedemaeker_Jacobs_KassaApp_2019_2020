@@ -1,6 +1,10 @@
 package model.state;
 import model.Winkelkar;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class Afsluit implements StateInterface {
 
     private Winkelkar winkelkar;

@@ -1,8 +1,10 @@
 package model.database.strategy;
 import model.database.ArtikelDB;
+
 /**
- * @Author Joren Raedemaeker,Jonas De Winter, Robbe Jacobs
- */
+ * @Author We hebben alles samen gedaan
+ **/
+
 public interface LoadSaveInterface {
     void Load(ArtikelDB artikelDB);
     void Save(ArtikelDB artikelDB);

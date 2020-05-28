@@ -1,6 +1,10 @@
 package model.state;
 import model.Artikel;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public interface StateInterface {
 
     default void sluitAf(){

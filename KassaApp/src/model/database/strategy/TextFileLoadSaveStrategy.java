@@ -4,9 +4,11 @@ import model.database.ArtikelDB;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.Scanner;
+
 /**
- * @Author Joren Raedemaeker
- */
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class TextFileLoadSaveStrategy implements LoadSaveInterface {
     private File file;
 

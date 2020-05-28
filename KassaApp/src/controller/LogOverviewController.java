@@ -6,6 +6,10 @@ import view.panels.LogOverviewPane;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class LogOverviewController implements Observer {
 
     private Winkelkar winkelkar;

@@ -2,6 +2,10 @@ package model.database.factory;
 import model.database.BestandSoortEnum;
 import model.database.strategy.LoadSaveInterface;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class BestandSoortFactory {
 
     private static BestandSoortFactory uniqueInstance;

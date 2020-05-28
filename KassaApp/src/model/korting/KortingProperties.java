@@ -2,6 +2,10 @@ package model.korting;
 import java.io.*;
 import java.util.Properties;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class KortingProperties {
 
 

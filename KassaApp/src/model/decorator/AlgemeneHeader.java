@@ -1,5 +1,9 @@
 package model.decorator;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class AlgemeneHeader extends TicketDecorator {
     private String tekst;
     private Ticket ticket;

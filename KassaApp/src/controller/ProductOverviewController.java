@@ -6,6 +6,10 @@ import model.observer.Observer;
 import view.panels.ProductOverviewPane;
 import java.util.ArrayList;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class ProductOverviewController implements Observer {
 
     private Winkel winkel;

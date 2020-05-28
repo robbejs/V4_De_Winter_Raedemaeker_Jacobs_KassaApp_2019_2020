@@ -2,6 +2,10 @@ package model.korting.strategy;
 import model.Artikel;
 import java.util.ArrayList;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class DrempelkortingStrategy implements KortingInterface {
 
     private double prijs = 100;

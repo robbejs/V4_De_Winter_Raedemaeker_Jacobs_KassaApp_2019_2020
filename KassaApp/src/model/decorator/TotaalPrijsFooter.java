@@ -1,6 +1,9 @@
 package model.decorator;
 import model.Winkelkar;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
 
 public class TotaalPrijsFooter extends TicketDecorator {
 

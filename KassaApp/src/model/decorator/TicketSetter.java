@@ -1,8 +1,11 @@
 package model.decorator;
-
 import model.Artikel;
 import model.Winkelkar;
 import java.util.ArrayList;
+
+/**
+ * @Author We hebben alles samen gedaan
+ **/
 
 public class TicketSetter extends Ticket{
 

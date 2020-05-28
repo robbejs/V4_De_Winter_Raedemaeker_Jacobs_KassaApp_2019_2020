@@ -9,8 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * @Author Jonas De Winter
+ * @Author We hebben alles samen gedaan
  **/
+
 public class ExcelLoadSaveStrategy implements LoadSaveInterface {
     private ExcelPlugin excelPlugin;
     private File file;

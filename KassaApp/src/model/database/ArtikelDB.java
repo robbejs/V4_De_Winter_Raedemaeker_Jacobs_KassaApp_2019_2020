@@ -3,9 +3,11 @@ import model.Artikel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
 /**
- * @Author Joren Raedemaeker,Jonas De Winter, Robbe Jacobs
- */
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class ArtikelDB {
     private ArrayList<Artikel> artikels;
 

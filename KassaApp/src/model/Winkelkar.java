@@ -5,6 +5,10 @@ import model.state.*;
 import model.korting.strategy.KortingInterface;
 import java.util.ArrayList;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class Winkelkar implements Observable {
     private ArrayList<Artikel> winkelwagen;
     private ArrayList<Observer> observers;

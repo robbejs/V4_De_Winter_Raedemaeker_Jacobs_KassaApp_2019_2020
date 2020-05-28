@@ -5,6 +5,10 @@ import model.Winkelkar;
 import view.panels.KassaOverviewPane;
 import java.util.ArrayList;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class KassaOverviewController implements Observer {
 
     private KassaOverviewPane view;

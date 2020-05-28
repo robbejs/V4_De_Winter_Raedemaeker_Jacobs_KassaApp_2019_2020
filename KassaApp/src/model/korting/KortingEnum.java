@@ -1,5 +1,9 @@
 package model.korting;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public enum KortingEnum {
     groepskorting("groepskorting", "model.korting.strategy.GroepskortingStrategy"),
     drempelkorting("drempelkorting","model.korting.strategy.DrempelkortingStrategy"),

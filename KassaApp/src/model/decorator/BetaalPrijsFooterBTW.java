@@ -2,6 +2,10 @@ package model.decorator;
 import model.Artikel;
 import java.util.ArrayList;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class BetaalPrijsFooterBTW extends TicketDecorator {
 
     private ArrayList<Artikel> artikels;

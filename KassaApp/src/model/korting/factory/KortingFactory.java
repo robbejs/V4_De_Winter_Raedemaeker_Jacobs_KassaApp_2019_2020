@@ -2,6 +2,10 @@ package model.korting.factory;
 import model.korting.KortingEnum;
 import model.korting.strategy.KortingInterface;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class KortingFactory {
     private static KortingFactory uniqueInstance;
 

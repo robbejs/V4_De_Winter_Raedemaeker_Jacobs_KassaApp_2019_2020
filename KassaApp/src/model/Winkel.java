@@ -10,6 +10,10 @@ import model.korting.factory.KortingFactory;
 import model.korting.strategy.KortingInterface;
 import java.util.Properties;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class Winkel {
     private Properties properties = new Properties();
     private Winkelkar winkelkar, winkelkarOnHold;

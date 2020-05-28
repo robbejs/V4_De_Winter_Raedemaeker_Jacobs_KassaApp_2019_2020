@@ -1,6 +1,10 @@
 package model.decorator;
 import java.time.LocalDateTime;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class DatumEnTijdHeader extends TicketDecorator {
 
     public Ticket ticket;

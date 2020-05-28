@@ -2,6 +2,10 @@ package model.state;
 import model.Artikel;
 import model.Winkelkar;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class Actief implements StateInterface {
 
     private Winkelkar winkelkar;

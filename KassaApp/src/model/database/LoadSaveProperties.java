@@ -2,6 +2,10 @@ package model.database;
 import java.io.*;
 import java.util.Properties;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class LoadSaveProperties {
 
     private boolean xls = false;

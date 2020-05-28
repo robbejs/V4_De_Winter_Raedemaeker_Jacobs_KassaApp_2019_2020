@@ -2,6 +2,10 @@ package model.korting.strategy;
 import model.Artikel;
 import java.util.ArrayList;
 
+/**
+ * @Author We hebben alles samen gedaan
+ **/
+
 public class DuurstekortingStrategy implements KortingInterface {
 
     private double percentage = 0.25;
